@@ -17,5 +17,9 @@ tb_alu_1:
 	$(IVLOG) $(TB_DIR)/$@.v
 	vvp build/$@.vvp
 
+tb_mod:
+	$(IVLOG) $(TB_DIR)/$@.v
+	vvp build/$@.vvp
+
 clean:
 	rm -rf *.vcd *.vvp build/*
