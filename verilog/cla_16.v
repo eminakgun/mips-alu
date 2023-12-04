@@ -1,7 +1,7 @@
 module cla_16 (input [15:0] A,
                input [15:0] B,
                input Cin,
-               output Cout
+               output Cout,
                output [15:0] Sum,
                // P and G for second layer CLL
                output P,
@@ -13,9 +13,9 @@ module cla_16 (input [15:0] A,
     wire P_3, G_3;
 
     cla_4 cla_4_0(A[3:0],   B[3:0],      Cin, Sum[3:0], P_0, G_0);
-    cla_4 cla_4_1(A[7:4],   B[7:4],   cout_0, Sum[3:0], P_1, G_1);
-    cla_4 cla_4_2(A[11:8],  B[11:8],  cout_1, Sum[3:0], P_2, G_2);
-    cla_4 cla_4_3(A[15:12], B[15:12], cout_2, Sum[3:0], P_3, G_3);
+    cla_4 cla_4_1(A[7:4],   B[7:4],   cout_0, Sum[7:4], P_1, G_1);
+    cla_4 cla_4_2(A[11:8],  B[11:8],  cout_1, Sum[11:8], P_2, G_2);
+    cla_4 cla_4_3(A[15:12], B[15:12], cout_2, Sum[15:12], P_3, G_3);
 
     // CLL
     and P_out(P, P_0, P_1, P_2, P_3); // P_3_0 = P_0.P_1.P_2.P_3

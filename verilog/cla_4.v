@@ -7,10 +7,10 @@ module cla_4 (input [3:0] A,
               output G);
 
 
-    alu_1 alu_1_0(A[0], B[0], Cin, Sum[0], p[0], g[0]);
-    alu_1 alu_1_0(A[1], B[1], cout_0, Sum[1], p[1], g[1]);
-    alu_1 alu_1_0(A[2], B[2], cout_1, Sum[2], p[2], g[2]);
-    alu_1 alu_1_0(A[3], B[3], cout_2, Sum[3], p[3], g[3]);
+    alu_1 alu_1_0(A[0], B[0], Cin, /*Ignore Cout*/ , Sum[0], p[0], g[0]);
+    alu_1 alu_1_1(A[1], B[1], cout_0, /*Ignore Cout*/ , Sum[1], p[1], g[1]);
+    alu_1 alu_1_2(A[2], B[2], cout_1, /*Ignore Cout*/ , Sum[2], p[2], g[2]);
+    alu_1 alu_1_3(A[3], B[3], cout_2, /*Ignore Cout*/ , Sum[3], p[3], g[3]);
 
     // CLL
     and P_out(P, p[0], p[1], p[2], p[3]); // P_3_0 = P_0.P_1.P_2.P_3
@@ -39,6 +39,5 @@ module cla_4 (input [3:0] A,
     //or Cout_3(cout_3, g[3], p3_and_c2); // Cout_3 = G_3 + P_3.Cout_2;
 
     //buf Cout_buf(Cout, cout_3); // Cout
-
 
 endmodule

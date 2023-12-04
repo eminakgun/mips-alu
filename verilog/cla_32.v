@@ -8,8 +8,8 @@ module cla_32 (input [31:0] A,
     wire P_0, G_0;
     wire P_1, G_1;
 
-    cla_16 cla_16_0(A[15:0],   B[15:0],     Cin, Sum[15:0], P_0, G_0);
-    cla_16 cla_16_1(A[31:16],  B[31:16], cout_0, Sum[31:16], P_1, G_1);
+    cla_16 cla_16_0(A[15:0],   B[15:0],     Cin, /*Ignore Couts*/, Sum[15:0], P_0, G_0);
+    cla_16 cla_16_1(A[31:16],  B[31:16], cout_0, /*Ignore Couts*/, Sum[31:16], P_1, G_1);
 
 
     // Carry calcualtion via CLL
