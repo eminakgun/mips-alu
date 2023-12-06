@@ -11,15 +11,16 @@ module mux8x1x32 (
     output [31:0] Out
 );
 
-    mux8x1x1 mux8x1x1_0 ( In_0[0], In_1[0], In_2[0], In_3[0], In_4[0], In_5[0], In_6[0], In_7[0], Sel,  Out[0]);
-    mux8x1x1 mux8x1x1_1 (In_0[1], In_1[1], In_2[1], In_3[1], In_4[1], In_5[1], In_6[1], In_7[1], Sel,  Out[1]);
-    mux8x1x1 mux8x1x1_3 (In_0[3], In_1[3], In_2[3], In_3[3], In_4[3], In_5[3], In_6[3], In_7[3], Sel,  Out[3]);
-    mux8x1x1 mux8x1x1_4 (In_0[4], In_1[4], In_2[4], In_3[4], In_4[4], In_5[4], In_6[4], In_7[4], Sel,  Out[4]);
-    mux8x1x1 mux8x1x1_5 (In_0[5], In_1[5], In_2[5], In_3[5], In_4[5], In_5[5], In_6[5], In_7[5], Sel,  Out[5]);
-    mux8x1x1 mux8x1x1_6 (In_0[6], In_1[6], In_2[6], In_3[6], In_4[6], In_5[6], In_6[6], In_7[6], Sel,  Out[6]);
-    mux8x1x1 mux8x1x1_7 (In_0[7], In_1[7], In_2[7], In_3[7], In_4[7], In_5[7], In_6[7], In_7[7], Sel,  Out[7]);
-    mux8x1x1 mux8x1x1_8 (In_0[8], In_1[8], In_2[8], In_3[8], In_4[8], In_5[8], In_6[8], In_7[8], Sel,  Out[8]);
-    mux8x1x1 mux8x1x1_9 (In_0[9], In_1[9], In_2[9], In_3[9], In_4[9], In_5[9], In_6[9], In_7[9], Sel,  Out[9]);
+    mux8x1x1 mux8x1x1_0 ( In_0[0],  In_1[0],  In_2[0],  In_3[0],  In_4[0],  In_5[0],  In_6[0],  In_7[0], Sel,  Out[0]);
+    mux8x1x1 mux8x1x1_1 ( In_0[1],  In_1[1],  In_2[1],  In_3[1],  In_4[1],  In_5[1],  In_6[1],  In_7[1], Sel,  Out[1]);
+    mux8x1x1 mux8x1x1_2 ( In_0[2],  In_1[2],  In_2[2],  In_3[2],  In_4[2],  In_5[2],  In_6[2],  In_7[2], Sel,  Out[2]);
+    mux8x1x1 mux8x1x1_3 ( In_0[3],  In_1[3],  In_2[3],  In_3[3],  In_4[3],  In_5[3],  In_6[3],  In_7[3], Sel,  Out[3]);
+    mux8x1x1 mux8x1x1_4 ( In_0[4],  In_1[4],  In_2[4],  In_3[4],  In_4[4],  In_5[4],  In_6[4],  In_7[4], Sel,  Out[4]);
+    mux8x1x1 mux8x1x1_5 ( In_0[5],  In_1[5],  In_2[5],  In_3[5],  In_4[5],  In_5[5],  In_6[5],  In_7[5], Sel,  Out[5]);
+    mux8x1x1 mux8x1x1_6 ( In_0[6],  In_1[6],  In_2[6],  In_3[6],  In_4[6],  In_5[6],  In_6[6],  In_7[6], Sel,  Out[6]);
+    mux8x1x1 mux8x1x1_7 ( In_0[7],  In_1[7],  In_2[7],  In_3[7],  In_4[7],  In_5[7],  In_6[7],  In_7[7], Sel,  Out[7]);
+    mux8x1x1 mux8x1x1_8 ( In_0[8],  In_1[8],  In_2[8],  In_3[8],  In_4[8],  In_5[8],  In_6[8],  In_7[8], Sel,  Out[8]);
+    mux8x1x1 mux8x1x1_9 ( In_0[9],  In_1[9],  In_2[9],  In_3[9],  In_4[9],  In_5[9],  In_6[9],  In_7[9], Sel,  Out[9]);
     mux8x1x1 mux8x1x1_10(In_0[10], In_1[10], In_2[10], In_3[10], In_4[10], In_5[10], In_6[10], In_7[10], Sel, Out[10]);
     mux8x1x1 mux8x1x1_11(In_0[11], In_1[11], In_2[11], In_3[11], In_4[11], In_5[11], In_6[11], In_7[11], Sel, Out[11]);
     mux8x1x1 mux8x1x1_12(In_0[12], In_1[12], In_2[12], In_3[12], In_4[12], In_5[12], In_6[12], In_7[12], Sel, Out[12]);
