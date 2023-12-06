@@ -25,16 +25,27 @@ module tb_alu();
         Reset <= 0; #10;
 
         // Test Mod
-        A     <= 16;
-        B     <= 5;
-        ALUOp <= MOD;
-        @We;
-        $display("Result %0d", Result);
+        test_mod(16, 5); #1;
+        $display("Result %0d, %0t", Result, $time);
+        @(posedge Clk);
+
+        test_mod(42, 11); #1;
+        $display("Result %0d, %0t", Result, $time);
+        @(posedge Clk);
 
         #10;
         $finish;
     end
 
+    task test_mod(input [31:0] a, input [31:0] b);
+        begin
+            A     <= a;
+            B     <= b;
+            ALUOp <= MOD;
+            @(posedge Clk);
+            wait(We == 1);
+        end
+    endtask
 
 
 endmodule

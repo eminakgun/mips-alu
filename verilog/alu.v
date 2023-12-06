@@ -17,7 +17,8 @@ module alu(input Clk,
     wire [31:0] MuxIn_4 = 0;
     wire [31:0] MuxIn_5 = 0;
     wire [31:0] MuxIn_6 = 0;
-    mux8x1x32 mux8x1x32_inst(MuxIn_0, MuxIn_1, MuxIn_2, MuxIn_3, MuxIn_4, MuxIn_5, MuxIn_6, Mod_Result, ALUOp, Result);
+    mux8x1x32 mux8x1x32_inst(MuxIn_0, MuxIn_1, MuxIn_2, MuxIn_3, 
+                             MuxIn_4, MuxIn_5, MuxIn_6, Mod_Result, ALUOp, Result);
     
     assign We = We_Mod; // TODO for now
 
