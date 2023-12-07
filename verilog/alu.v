@@ -22,13 +22,13 @@ module alu(input Clk,
     cla_32 cla_32_inst(A, B_in, Cin, Cout, Sum, AND, OR, XOR, NOR);
     
     // Cin selection
-    buf Cin_buf(Cin, Sub_En); // basically same as Cin
-
+    buf Cin_buf(Cin, Sub_En); // basically same as Sub_En
 
     // B xor SUB, for Subtraction
     not (ALU0_not, ALUOp[0]);
     and SubEn_and(Sub_En, ALUOp[2], ALUOp[1], ALU0_not);
     
+    // TODO Call 32 times instead of generate?
     genvar i;
     generate for(i = 0; i < 32; i = i+1)
         xor B_xor(B_in[i], B[i], Sub_En);
