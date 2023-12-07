@@ -1,15 +1,18 @@
 module cla_32 (input [31:0] A,
                input [31:0] B,
-               input Cin,
+               input  Cin,
                output Cout,
-               output [31:0] Sum
-);
+               output [31:0] Sum,
+               output [31:0] AND,
+               output [31:0] OR,
+               output [31:0] XOR,
+               output [31:0] NOR);
 
     wire P_0, G_0;
     wire P_1, G_1;
 
-    cla_16 cla_16_0(A[15:0],   B[15:0],     Cin, /*Ignore Couts*/, Sum[15:0], P_0, G_0);
-    cla_16 cla_16_1(A[31:16],  B[31:16], cout_0, /*Ignore Couts*/, Sum[31:16], P_1, G_1);
+    cla_16 cla_16_0(A[15:0],   B[15:0],     Cin, /*Ignore Couts*/, Sum[15:0],  P_0, G_0, AND[ 15:0],  OR[15:0],  XOR[15:0],  NOR[15:0]);
+    cla_16 cla_16_1(A[31:16],  B[31:16], cout_0, /*Ignore Couts*/, Sum[31:16], P_1, G_1, AND[31:16], OR[31:16], XOR[31:16], NOR[31:16]);
 
 
     // Carry calcualtion via CLL

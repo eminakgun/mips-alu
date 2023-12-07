@@ -4,13 +4,17 @@ module cla_4 (input [3:0] A,
               output [3:0] Sum,
               // P and G for second layer CLL
               output P,
-              output G);
+              output G,
+              output [3:0] AND,
+              output [3:0] OR,
+              output [3:0] XOR,
+              output [3:0] NOR);
 
 
-    alu_1 alu_1_0(A[0], B[0], Cin, /*Ignore Cout*/ , Sum[0], p[0], g[0]);
-    alu_1 alu_1_1(A[1], B[1], cout_0, /*Ignore Cout*/ , Sum[1], p[1], g[1]);
-    alu_1 alu_1_2(A[2], B[2], cout_1, /*Ignore Cout*/ , Sum[2], p[2], g[2]);
-    alu_1 alu_1_3(A[3], B[3], cout_2, /*Ignore Cout*/ , Sum[3], p[3], g[3]);
+    alu_1 alu_1_0(A[0], B[0], Cin,    /*Ignore Cout*/ , Sum[0], p[0], g[0], AND[0], OR[0], XOR[0], NOR[0]);
+    alu_1 alu_1_1(A[1], B[1], cout_0, /*Ignore Cout*/ , Sum[1], p[1], g[1], AND[1], OR[1], XOR[1], NOR[1]);
+    alu_1 alu_1_2(A[2], B[2], cout_1, /*Ignore Cout*/ , Sum[2], p[2], g[2], AND[2], OR[2], XOR[2], NOR[2]);
+    alu_1 alu_1_3(A[3], B[3], cout_2, /*Ignore Cout*/ , Sum[3], p[3], g[3], AND[3], OR[3], XOR[3], NOR[3]);
 
     // CLL
     and P_out(P, p[0], p[1], p[2], p[3]); // P_3_0 = P_0.P_1.P_2.P_3

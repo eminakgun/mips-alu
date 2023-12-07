@@ -5,15 +5,20 @@ module tb_alu();
     reg [31:0] A = 0;
     reg [31:0] B = 0;
     reg [ 2:0] ALUOp = 0;
-    wire Z; // Z = 1, if Result = 0
-    wire V; // V = 1, if Overflow
     wire C; //  C32 = 1, if Carry-Out
     wire [31:0] Result;
     wire We;
 
-    parameter MOD = 7;
+    parameter AND  = 0;
+    parameter  OR  = 1;
+    parameter XOR  = 2;
+    parameter NOR  = 3;
+    parameter LESS = 4;
+    parameter ADD  = 5;
+    parameter SUB  = 6;
+    parameter MOD  = 7;
            
-    alu alu_0(Clk, Reset, A, B, ALUOp, Z, V, C, Result, We);
+    alu alu_0(Clk, Reset, A, B, ALUOp, C, Result, We);
 
     always #5 Clk = ~Clk;
            
@@ -23,6 +28,15 @@ module tb_alu();
 
         Reset <= 1; #10;
         Reset <= 0; #10;
+
+        send_instruction($random, $random, AND); #10;
+        send_instruction($random, $random, OR); #10;
+        send_instruction($random, $random, XOR); #10;
+        send_instruction($random, $random, NOR); #10;
+        send_instruction($random, $random, LESS); #10;
+        send_instruction($random, $random, ADD); #10;
+        send_instruction($random, $random, SUB); #10;
+        #3;
 
         // Test Mod
         test_mod(16, 5); #1;
@@ -37,13 +51,27 @@ module tb_alu();
         $finish;
     end
 
+    task send_instruction(input [31:0] a, input [31:0] b, input [2:0] op);
+    begin
+        A     <= a;
+        B     <= b;
+        ALUOp <= op;
+        wait(We == 1);
+        $display("Instruction Results,");
+        $display("A:      %b", a);
+        $display("B:      %b", b);
+        $display("Result: %b, @%0t", Result, $time);
+        $display("ALUop: %0d", op);
+    end
+    endtask
+
     task test_mod(input [31:0] a, input [31:0] b);
         begin
             A     <= a;
             B     <= b;
             ALUOp <= MOD;
             @(posedge Clk);
-            wait(We == 1);
+            @(posedge We);
         end
     endtask
 

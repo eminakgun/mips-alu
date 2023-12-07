@@ -5,17 +5,21 @@ module cla_16 (input [15:0] A,
                output [15:0] Sum,
                // P and G for second layer CLL
                output P,
-               output G);
+               output G,
+               output [15:0] AND,
+               output [15:0] OR,
+               output [15:0] XOR,
+               output [15:0] NOR);
     
     wire P_0, G_0;
     wire P_1, G_1;
     wire P_2, G_2;
     wire P_3, G_3;
 
-    cla_4 cla_4_0(A[3:0],   B[3:0],      Cin, Sum[3:0], P_0, G_0);
-    cla_4 cla_4_1(A[7:4],   B[7:4],   cout_0, Sum[7:4], P_1, G_1);
-    cla_4 cla_4_2(A[11:8],  B[11:8],  cout_1, Sum[11:8], P_2, G_2);
-    cla_4 cla_4_3(A[15:12], B[15:12], cout_2, Sum[15:12], P_3, G_3);
+    cla_4 cla_4_0(A[3:0],   B[3:0],      Cin, Sum[ 3: 0], P_0, G_0, AND[3:0],   OR[3:0],   XOR[3:0],   NOR[3:0]);
+    cla_4 cla_4_1(A[7:4],   B[7:4],   cout_0, Sum[ 7: 4], P_1, G_1, AND[7:4],   OR[7:4],   XOR[7:4],   NOR[7:4]);
+    cla_4 cla_4_2(A[11:8],  B[11:8],  cout_1, Sum[11: 8], P_2, G_2, AND[11:8],  OR[11:8],  XOR[11:8],  NOR[11:8]);
+    cla_4 cla_4_3(A[15:12], B[15:12], cout_2, Sum[15:12], P_3, G_3, AND[15:12], OR[15:12], XOR[15:12], NOR[15:12]);
 
     // CLL
     and P_out(P, P_0, P_1, P_2, P_3); // P_3_0 = P_0.P_1.P_2.P_3
