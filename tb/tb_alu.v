@@ -35,8 +35,6 @@ module tb_alu();
         send_instruction(-500, -300, LESS); #10 // 1
         send_instruction(-1, 100, LESS); #10  //1
         
-        $finish;
-
         send_instruction($random, $random, AND); #10;
         send_instruction($random, $random, OR); #10;
         send_instruction($random, $random, XOR); #10;
@@ -67,8 +65,8 @@ module tb_alu();
         wait(We == 1);
         #1;
         $display("Instruction Results,");
-        $display("A:      %d", a);
-        $display("B:      %d", b);
+        $display("A:      %b", a);
+        $display("B:      %b", b);
         $display("Result: %b, @%0t", Result, $time);
         $display("ALUop: %0d", op);
     end
