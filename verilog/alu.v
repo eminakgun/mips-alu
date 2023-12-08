@@ -7,7 +7,8 @@ module alu(input Clk,
            output [31:0] Result,
            output We);
 
-
+    // intermediate wires
+    wire [31:0] A_in;
     wire [31:0] B_in;
     wire        Cout;
     wire [31:0]  Sum;
@@ -17,20 +18,22 @@ module alu(input Clk,
     wire [31:0]  NOR;
     wire        Less;
 
-    // CLA-32
-    wire Cin;
-    cla_32 cla_32_inst(A, B_in, Cin, Cout, Sum, AND, OR, XOR, NOR);
+    // CLA-32 instantiation
+    cla_32 cla_32_inst(A_in, B_in, Cin, Cout, Sum, AND, OR, XOR, NOR);
     
     // Cin selection
+    wire Cin;
     buf Cin_buf(Cin, Sub_En); // basically same as Sub_En
 
     // Instruction detection for Sub and Less
+    wire Sub_Inst, Less_Inst, Mod_Inst;
     not (ALU0_not, ALUOp[0]);
     not (ALU1_not, ALUOp[1]);
     and Sub_Inst_i(Sub_Inst, ALUOp[2], ALUOp[1], ALU0_not);
     and Less_Inst_i(Less_Inst, ALUOp[2], ALU1_not, ALU0_not);
+    and Mod_Inst_i(Mod_Inst, ALUOp[0], ALUOp[1], ALUOp[2]);
 
-    or Sub_En_or(Sub_En, Sub_Inst, Less_Inst);
+    or Sub_En_or(Sub_En, Sub_Inst, Less_Inst, Mod_Inst);
     
     // B xor SubEn
 	xor B_xor_0( B_in[0],  B[0],  Sub_En);
@@ -72,18 +75,54 @@ module alu(input Clk,
     // Mod
     wire We_Mod;
     wire [31:0] Mod_Result;
-    and ModEn_and(Mod_En, ALUOp[0], ALUOp[1], ALUOp[2]);
-    mod mod_inst(Clk, Reset, Mod_En, A, B, Mod_Result, We_Mod);
+    wire [31:0] Dp_Result_reg;
+    mod mod_inst(Clk, Reset, Mod_Inst, A, B, Sum, Dp_Result_reg, Mod_Result, We_Mod);
 
-    // Mux8x1x32
-    mux8x1x32 mux8x1x32_inst(AND, OR, XOR, NOR, Less, Sum, Sum, Mod_Result, ALUOp, Result);
-
+    // A Selection, 2:1 32-bit Mux
+    mux_2_1 mux_2_1_0(A[0],    Dp_Result_reg[0], Mod_Inst, A_in[0]);
+    mux_2_1 mux_2_1_1(A[1],    Dp_Result_reg[1], Mod_Inst, A_in[1]);
+    mux_2_1 mux_2_1_2(A[2],    Dp_Result_reg[2], Mod_Inst, A_in[2]);
+    mux_2_1 mux_2_1_3(A[3],    Dp_Result_reg[3], Mod_Inst, A_in[3]);
+    mux_2_1 mux_2_1_4(A[4],    Dp_Result_reg[4], Mod_Inst, A_in[4]);
+    mux_2_1 mux_2_1_5(A[5],    Dp_Result_reg[5], Mod_Inst, A_in[5]);
+    mux_2_1 mux_2_1_6(A[6],    Dp_Result_reg[6], Mod_Inst, A_in[6]);
+    mux_2_1 mux_2_1_7(A[7],    Dp_Result_reg[7], Mod_Inst, A_in[7]);
+    mux_2_1 mux_2_1_8(A[8],    Dp_Result_reg[8], Mod_Inst, A_in[8]);
+    mux_2_1 mux_2_1_9(A[9],    Dp_Result_reg[9], Mod_Inst, A_in[9]);
+    mux_2_1 mux_2_1_10(A[10], Dp_Result_reg[10], Mod_Inst, A_in[10]);
+    mux_2_1 mux_2_1_11(A[11], Dp_Result_reg[11], Mod_Inst, A_in[11]);
+    mux_2_1 mux_2_1_12(A[12], Dp_Result_reg[12], Mod_Inst, A_in[12]);
+    mux_2_1 mux_2_1_13(A[13], Dp_Result_reg[13], Mod_Inst, A_in[13]);
+    mux_2_1 mux_2_1_14(A[14], Dp_Result_reg[14], Mod_Inst, A_in[14]);
+    mux_2_1 mux_2_1_15(A[15], Dp_Result_reg[15], Mod_Inst, A_in[15]);
+    mux_2_1 mux_2_1_16(A[16], Dp_Result_reg[16], Mod_Inst, A_in[16]);
+    mux_2_1 mux_2_1_17(A[17], Dp_Result_reg[17], Mod_Inst, A_in[17]);
+    mux_2_1 mux_2_1_18(A[18], Dp_Result_reg[18], Mod_Inst, A_in[18]);
+    mux_2_1 mux_2_1_19(A[19], Dp_Result_reg[19], Mod_Inst, A_in[19]);
+    mux_2_1 mux_2_1_20(A[20], Dp_Result_reg[20], Mod_Inst, A_in[20]);
+    mux_2_1 mux_2_1_21(A[21], Dp_Result_reg[21], Mod_Inst, A_in[21]);
+    mux_2_1 mux_2_1_22(A[22], Dp_Result_reg[22], Mod_Inst, A_in[22]);
+    mux_2_1 mux_2_1_23(A[23], Dp_Result_reg[23], Mod_Inst, A_in[23]);
+    mux_2_1 mux_2_1_24(A[24], Dp_Result_reg[24], Mod_Inst, A_in[24]);
+    mux_2_1 mux_2_1_25(A[25], Dp_Result_reg[25], Mod_Inst, A_in[25]);
+    mux_2_1 mux_2_1_26(A[26], Dp_Result_reg[26], Mod_Inst, A_in[26]);
+    mux_2_1 mux_2_1_27(A[27], Dp_Result_reg[27], Mod_Inst, A_in[27]);
+    mux_2_1 mux_2_1_28(A[28], Dp_Result_reg[28], Mod_Inst, A_in[28]);
+    mux_2_1 mux_2_1_29(A[29], Dp_Result_reg[29], Mod_Inst, A_in[29]);
+    mux_2_1 mux_2_1_30(A[30], Dp_Result_reg[30], Mod_Inst, A_in[30]);
+    mux_2_1 mux_2_1_31(A[31], Dp_Result_reg[31], Mod_Inst, A_in[31]);
+    
+    // We selection
     // 2:1 Mux for Write Enable, We
-    // Mod_En We
-    // 0      1
-    // 1      We_Mod
-    not Mod_En_not(ModEn_not, Mod_En);
-    and Mod_We_and(We_Mod_En, Mod_En,  We_Mod);
-    or  We_or     (We, ModEn_not, We_Mod_En);
+    // Mod_Inst We
+    // 0        1
+    // 1        We_Mod
+    mux_2_1 mux_2_1_We(1, We_Mod, Mod_Inst, We);
+    //not Mod_En_not(ModEn_not, Mod_Inst);
+    //and Mod_We_and(We_Mod_En, Mod_Inst,  We_Mod);
+    //or  We_or     (We, ModEn_not, We_Mod_En);
+
+    // 8:1 32-bit Mux for Result
+    mux8x1x32 mux8x1x32_inst(AND, OR, XOR, NOR, Less, Sum, Sum, Mod_Result, ALUOp, Result);
 
 endmodule
