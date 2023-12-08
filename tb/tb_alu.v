@@ -29,6 +29,14 @@ module tb_alu();
         Reset <= 1; #10;
         Reset <= 0; #10;
 
+        send_instruction(1, 100, LESS); #10 // 1
+        send_instruction(500, 333, LESS); #10 // 0
+        send_instruction(-100, -300, LESS); #10 // 0
+        send_instruction(-500, -300, LESS); #10 // 1
+        send_instruction(-1, 100, LESS); #10  //1
+        
+        $finish;
+
         send_instruction($random, $random, AND); #10;
         send_instruction($random, $random, OR); #10;
         send_instruction($random, $random, XOR); #10;
@@ -57,9 +65,10 @@ module tb_alu();
         B     <= b;
         ALUOp <= op;
         wait(We == 1);
+        #1;
         $display("Instruction Results,");
-        $display("A:      %b", a);
-        $display("B:      %b", b);
+        $display("A:      %d", a);
+        $display("B:      %d", b);
         $display("Result: %b, @%0t", Result, $time);
         $display("ALUop: %0d", op);
     end
