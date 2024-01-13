@@ -1,0 +1,251 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/mips-alu-master/quartus-mips-alu/simulation/modelsim
+valu
+Z1 !s110 1701986950
+!i10b 1
+!s100 Og8`:_b^5YX@cgzV@]_Ae0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IjblYXWa06kbRT1=g;PhTA1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1701986716
+8E:/mips-alu-master/quartus-mips-alu/verilog/alu.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/alu.v
+!i122 9
+L0 1 84
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1701986950.000000
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/alu.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/mips-alu-master/quartus-mips-alu/verilog
+Z7 tCvgOpt 0
+valu_1
+R1
+!i10b 1
+!s100 DMU]D271h01lIL3_:V8CC1
+R2
+IBJOLDfeR;afh;M5^Wjc_a2
+R3
+R0
+Z8 w1701985784
+8E:/mips-alu-master/quartus-mips-alu/verilog/alu_1.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/alu_1.v
+!i122 8
+L0 1 38
+R4
+r1
+!s85 0
+31
+Z9 !s108 1701986949.000000
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/alu_1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/alu_1.v|
+!i113 1
+R5
+R6
+R7
+vcla_16
+Z10 !s110 1701986949
+!i10b 1
+!s100 7S:hE99Pc]bKVNU[jFPmb1
+R2
+IQ<;Vc103RQ0TlNhnjL6dI1
+R3
+R0
+R8
+8E:/mips-alu-master/quartus-mips-alu/verilog/cla_16.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/cla_16.v
+!i122 6
+L0 1 44
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/cla_16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/cla_16.v|
+!i113 1
+R5
+R6
+R7
+vcla_32
+R10
+!i10b 1
+!s100 `YcYAP`e:z_H>XHf9abb:2
+R2
+Ik_UQbjM8lCUI8IoGWfEO00
+R3
+R0
+R8
+8E:/mips-alu-master/quartus-mips-alu/verilog/cla_32.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/cla_32.v
+!i122 5
+L0 1 25
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/cla_32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/cla_32.v|
+!i113 1
+R5
+R6
+R7
+vcla_4
+R10
+!i10b 1
+!s100 mI@XzK@_GGE^gHlo<IY5S0
+R2
+IEVOo56DT0ZG>6OQ<>nJ;O3
+R3
+R0
+w1701986931
+8E:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v
+!i122 7
+L0 1 47
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v|
+!i113 1
+R5
+R6
+R7
+vmod
+R10
+!i10b 1
+!s100 hX66NW6IX@>:A0oR<=NE53
+R2
+I>mYCdO2P3HKE9>AQjLhlK1
+R3
+R0
+Z11 w1701902168
+8E:/mips-alu-master/quartus-mips-alu/verilog/mod.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/mod.v
+!i122 4
+L0 1 16
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/mod.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/mod.v|
+!i113 1
+R5
+R6
+R7
+vmod_cu
+R10
+!i10b 1
+!s100 iJUT1=I:<ib3W2DA3z1b60
+R2
+I4NNG?H<;RO6aa;EOhNngF2
+R3
+R0
+R11
+8E:/mips-alu-master/quartus-mips-alu/verilog/mod_cu.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/mod_cu.v
+!i122 3
+L0 1 66
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/mod_cu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/mod_cu.v|
+!i113 1
+R5
+R6
+R7
+vmod_dp
+R10
+!i10b 1
+!s100 73O_]kOKMTK8Vgn>DnhGM2
+R2
+IeI4gC<58Hb;]6nNgO?VBA0
+R3
+R0
+R8
+8E:/mips-alu-master/quartus-mips-alu/verilog/mod_dp.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/mod_dp.v
+!i122 2
+L0 1 15
+R4
+r1
+!s85 0
+31
+R9
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/mod_dp.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/mod_dp.v|
+!i113 1
+R5
+R6
+R7
+vmux8x1x1
+Z12 !s110 1701986948
+!i10b 1
+!s100 Dhb9>:2nbQ6zF5BR8Kfkk2
+R2
+ImGP5<dVYLFNLSLHH4DXfA3
+R3
+R0
+R11
+8E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x1.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x1.v
+!i122 1
+L0 1 32
+R4
+r1
+!s85 0
+31
+Z13 !s108 1701986948.000000
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x1.v|
+!i113 1
+R5
+R6
+R7
+vmux8x1x32
+R12
+!i10b 1
+!s100 NS?6ABST`SmBoN3A>j`RJ0
+R2
+IO7bJIPORm7[ZX><_^D@I;2
+R3
+R0
+R11
+8E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x32.v
+FE:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x32.v
+!i122 0
+L0 1 48
+R4
+r1
+!s85 0
+31
+R13
+!s107 E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/mips-alu-master/quartus-mips-alu/verilog|E:/mips-alu-master/quartus-mips-alu/verilog/mux8x1x32.v|
+!i113 1
+R5
+R6
+R7
