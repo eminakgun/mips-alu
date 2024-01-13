@@ -1,6 +1,0 @@
-
-State Machine - |alu|mod:mod_inst|mod_cu:cu_inst|state
-Name state.WaitEn state.RegisterOutput state.WaitDone 
-state.WaitEn 0 0 0 
-state.WaitDone 1 0 1 
-state.RegisterOutput 1 1 0 

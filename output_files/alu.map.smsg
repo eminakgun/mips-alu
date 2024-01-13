@@ -1,3 +1,0 @@
-Info (10281): Verilog HDL Declaration information at mod_cu.v(8): object "Dp_Result_reg" differs only in case from object "dp_result_reg" in the same scope File: E:/mips-alu-master/quartus-mips-alu/verilog/mod_cu.v Line: 8
-Info (10281): Verilog HDL Declaration information at cla_4.v(6): object "P" differs only in case from object "p" in the same scope File: E:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v Line: 6
-Info (10281): Verilog HDL Declaration information at cla_4.v(7): object "G" differs only in case from object "g" in the same scope File: E:/mips-alu-master/quartus-mips-alu/verilog/cla_4.v Line: 7
